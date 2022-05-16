@@ -1,79 +1,176 @@
-# Cover Card landing page theme
+# HANUMAN Jekyll Theme
 
-## Quick set-up
+[![Build Status](https://travis-ci.org/samanyougarg/hanuman.svg?branch=master)](https://travis-ci.org/samanyougarg/hanuman)
 
-1. [Use this template](https://github.com/epidrome/cover-card/generate)
-2. Edit the `_config.yml` with your online presence accounts and upload a background and an avatar image
-3. Go to the `Settings` tab, then select `Pages` from the sidebar, and find (gh-pages branch) your new home page link
+Hanuman is a minimal yet powerful Jekyll theme for your blogs and websites.
 
-## Dependencies
+It is built using the open source [AMP Start framework](https://www.ampstart.com/) and can be customized as per your requirements.
 
-This theme is based on [jekyll](https://jekyllrb.com/) and [jekyll-remote-theme](https://github.com/benbalter/jekyll-remote-theme). These dependencies are natively supported by [Github Pages](https://pages.github.com/), which should build and deploy your site as soon as you make any change to your files. The theme is also based on the icons from [Font Awesome](https://fontawesome.com/). 
+<a href="https://www.buymeacoffee.com/samanyougarg"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" target="_blank"></a>
 
-## Motivation
+## Live Demo
+## [Hanuman](https://samanyougarg.com/hanuman)
+![Hanuman](/Screenshots/hanuman.jpg "Hanuman Preview")
 
-Create a cover page for your social media profiles, host it for free on Github Pages, and maintain it in minutes, not hours. 
 
-I understand that a jekyll theme without a blog might sound like a self contradiction, but jekyll has also motivated something even more useful than itself: seamless hosting with Github Pages. 
+## Features
 
-This theme takes advantage of both jekyll and Github Pages, in order to create something similar to [linktree](https://linktr.ee), [about.me](https://about.me/) and [carrd](https://carrd.co), but without the price tag.
+- Minimal
+- Responsive
+- Syntax Highlighting for code
+- Cover Images for homepage and blog posts
+- Social Sharing
+- Simple Navigation Menu
+- Pagination
+- Google Analytics
+- Can be easily installed via "theme gem"
+- Github Pages support
+- Easily Customisable
+- Tags
+- Multiple Authors
 
-In addition to the official demo link, here is one more [demo from my home page](https://github.com/epidrome/home).
+## What is AMP
 
-This theme is ideal for people or organizations who are busy enjoying their life or business and who want a simple business card for their online presence.
+AMP stands for [Accelerated Mobile Pages](https://www.ampproject.org/), a Google-backed project designed as an open standard for any publisher to have pages load quickly on mobile devices.
 
-Please keep this README file because it contains the credits at the end and it might become handy after you have completely forgoten the set-up instructions.
+## Installation
 
-## Design rationale
+There are different ways to install the theme -
 
-The design rationale of this theme is to do less than other themes: "Less is more"
+### 1. Cloning the repository and updating settings
+1. Fork this repository and clone the forked repository.
+2. Update the _config.yml file as per your requirements.
+3. Add your posts to the _posts directory.
+4. Deploy to Github Pages or your own server.
 
-The majority (99%) of the availabe jekyll themes offers a blog, but I have never been able to keep blog content (or its technology) updated over time.
+#### Deploying to Github Pages
+**Method 1**
 
-Let's be honest with ourselves: How does an (abandoned) blog centered web site look to new visitors if we have not posted since two years ago?
+Push the contents of the destination folder (mentioned in _config.yml. eg - destination: ../hanuman-pages/) to the gh-pages branch(if project page) or master branch(if user page) of your repository.
 
-## Make it yours
+**Method 2**
 
-[Fork this repository](https://github.com/epidrome/cover-card/fork) and edit the files to your liking: As a first step, you may want to replace the images and edit the `_config.yml` with your online profiles. You can test the result almost in real-time at the `Github Pages` section in the Settings tab (gh-pages branch).
+- Set up travis-ci for your fork.
+- Generate your secure token with the travis gem:
+  Run `gem install travis` on your terminal.
+- Grab the GH_TOKEN from https://github.com/settings/tokens
+- Then run `travis encrypt 'GIT_NAME="YOUR_USERNAME" GIT_EMAIL="YOUR_EMAIL" GH_TOKEN=YOUR_TOKEN'`
+- Add the token to your .travis.yml file.
+Now you just need to push the files. Travis will generate the HTML files and automatically push them to your gh-pages branch.
+This is the setup I am using.
 
-### Avatar or Logo
+### 2. Ruby Gem Method
+Add this line to your Jekyll site's `Gemfile`:
 
-The avatar image should be square and at least 200 pixels. Chances are that you have a selfie somewhere in your media storage. If you are making a page for a business or product, then use a logo.
+```ruby
+gem "hanuman"
+```
 
-### Background image sets the mood
+And add this line to your Jekyll site's `_config.yml`:
 
-There is no aspect ratio requirement for the background image, but it should be big enough for contemporary (desktop, tablet, phone) computer displays and dark enough in order to work for the white foreground text and icons.
+```yaml
+theme: hanuman
+```
 
-### Social profiles
+And then execute:
 
-Edit the `_config.yml` file with your social media profiles by adding the respective account name, according to the documentation and comments inside that file. You can delete or comment out the social media that you don't need. Since v04, you can also control the order of your social media accounts. Moreover, you can add new media accounts and choose the icon.
+    $ bundle
 
-### Domain name
+Or install it yourself as:
 
-Github Pages supports free custom domain names, so it is worth buying a domain name and fill it in `Custom domain` field at the settings. If you want to use the theme with you user page (ie. username.github.io), then delete (or rename) your `master branch` and rename your `gh-branch` to `master` [#13](https://github.com/epidrome/cover-card/issues/13)
+    $ gem install hanuman
 
-### Working example
+You'll also need to copy or create the _config.yml file just like in this repository. Similarly, you'll need to have a navigation.yml and author.yml in your _data directory.
 
-In addition to the configuration file in this repository, you can also [inspect a modified example of the legacy configuration file](https://github.com/epidrome/home/tree/0f333b28688a7a2e5eb84df768c277a03848d228), which is using the *legacy version* of the theme. Moreover, you can inspect a [custom (icons, links) example of the *current version*](https://github.com/epidrome/home).
+#### Deploying to Github Pages
+Run `bundle exec jekyll serve` inside your cloned repository. Push the contents of the resulting _site to your Github Pages repository.
 
-### Updates
 
-Please note that the theme is currently in beta, so some updates at the [master branch](https://github.com/epidrome/cover-card/tree/master) might break your site. Don't panic! 
+### 3. Jekyll Remote Theme
+1. Create or update your Gemfile with the following -
 
-If you wish to keep your theme frozen and not receive updates, then you can [revert your remote_theme to the last known good configuration](https://github.com/benbalter/jekyll-remote-theme):
+```ruby
+source "https://rubygems.org"
+gem "github-pages", group: :jekyll_plugins
+gem "jekyll-remote-theme"
+```
 
-> You may also optionally specify a branch, tag, or commit to use by appending an @ and the Git ref (e.g., epidrome/cover-card@v0.3). If you don't specify a Git ref, the master branch will be used.
+2. Update the bundled gems using `bundle` command.
 
-Please note that currently Github Pages seems to build your site only when you make a local change. This means that the theme might get updated but you will not receive the updated version unless you make a local change in your forked repository.
+3. Add `remote_theme: "hanuman"` to your `_config.yml`.
 
-You can always visit [releases](https://github.com/epidrome/cover-card/releases) for new features and check [issues](https://github.com/epidrome/cover-card/issues) for major bugs.
+4. Add `jekyll-remote-theme` to the plugins array of your `_config.yml` -
 
-### Expert options
+```yaml
+plugins:
+  - jekyll-remote-theme
+```
 
-You can find and locally overide advanced options (e.g., font, image, and icon styles) for this theme in the documentation (readme) at the [master branch](https://github.com/epidrome/cover-card/tree/master).
+## Usage
 
-## Credits
+### _config.yml
+Update _config.yml with your respective settings like updating your site's name, description etc...
 
-This page is based on the [cover-card jekyll remote theme](https://github.com/epidrome/cover-card/tree/master).
+### Styling
+AMP has a limitation that you can only use inline css.
+All the CSS for this theme is in the styles.scss file in the includes directory.
 
-Background photo by Anders Jildén and avatar photo by Ayo Ogunseinde, both on [Unsplash](https://unsplash.com/)
+#### Changing the Default Color
+In the styles.scss file in the includes directory, you can change the hex value of $theme-color to the color you would like your site to use.
+
+### Author Information
+Author information is present in the author.yml file in the _data folder. You can update the fields of that file as per your requirements.
+
+### Sidenav
+Sidenav can be updated from the navigation.yml file in the _data folder.
+
+## Writing Posts
+You can write posts just as you would in Jekyll, the only difference being that AMP has some strict guidelines on including external content.
+
+You cannot use Markdown format or normal HTML tags. AMP provides its own custom tags for images, videos etc...
+
+### Examples -
+
+**Images**
+`<amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>`
+
+**Videos**
+`<amp-youtube data-videoid="mGENRKrdoGY" layout="responsive" width="480" height="270"></amp-youtube>`
+
+[See Full AMP Documentation.](https://www.ampproject.org/docs/)
+
+### Using AMP Components
+Some AMP components require you to specify external scripts before using them.
+You can specify these scripts in the head.html file in the includes directory after the already imported scripts and then use these components in any post.
+
+## Validating your page with AMP
+AMP provides built-in validator to validate your pages so that they can rendered quickly.
+
+You can access this validator by opening the Developer Console in your browser and adding #development=1 to any url of your site.
+
+Example -
+http://localhost:4000/#development=1
+
+If you have errors on your page, AMP will list those for you in the console. If you do not have any errors, you'll get a message "AMP Validation Successful" on your console.
+
+## Enabling Google Analytics
+1. Set up your Analytics Tracking ID in _config.yml.
+2. Remove {% comment %} and {% endcomment %} tags in the default.html file in layouts directory.
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/samanyougarg/hanuman. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+To submit a pull request -
+
+1. Fork/clone the repository.
+2. Develop.
+3. Create a new branch from the master branch.
+4. Open a pull request on Github describing what was fixed or added.
+
+## Thanks
+Hanuman is based on [amplify](https://github.com/ageitgey/amplify) jekyll theme. Thank You.
+
+## License
+
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
